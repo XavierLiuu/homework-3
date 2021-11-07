@@ -14,13 +14,13 @@
 3. when you are done with your final `push` to this repo, submit the link to this repo on Canvas. (Make sure to `commit` your progress throughout the day, and `push` your progress at the end of each day.)
 
 
-### Assignment items
+### Assignment items `[100 pts]`
 
-1. __Write a function that takes a single numerical vector and returns three values, the minimum number, the median, and the maximum number of the vector.  Test your function using the month column of the flights dataset.__ `[20 pts]`
+1. `[20 pts]` __Write a function that takes a single numerical vector and returns three values, the minimum number, the median, and the maximum number of the vector.  Test your function using the month column of the flights dataset.__
 
-2.  __Explain your reasoning for choosing your function’s name in the previous question.__ `[10 pts]`
+2. `[10 pts]` __Explain your reasoning for choosing your function’s name in the previous question.__
 
-3. __Write a function that categorizes a numerical variable in the flights data into four categories.__ `[30 pts]`
+3. `[30 pts]` __Write a function that categorizes a numerical variable in the flights data into four categories.__
 
   The function should have two arguments.  The first should represent the tibble object and the second should represent a column name in the data object.  
 
@@ -39,12 +39,12 @@
   `data$columnname[which(data$columnname<=some_value_here)]<-"Morning"`
 
 
-4.  __Explain your reasoning for choosing your function’s name in the previous question.__ `[10 pts]`
+4. `[10 pts]` __Explain your reasoning for choosing your function’s name in the previous question.__
 
-5. __Write a function that calculates the median of all numeric variables in the flights dataset using a `for` loop.__ `[20 pts]`
+5. `[20 pts]` __Write a function that calculates the median of all numeric variables in the flights dataset using a `for` loop.__
 
   _Hint: There are several ways to subset to numeric values only.  Given that we haven't walked through the automated ways to do this yet I'll give you the first step in this answer:_
 
   `flights_numeric_vars<-select_if(flights, is.numeric)`
 
-6.  __Explain your reasoning for choosing your function’s name in the previous question.__ `[10 pts]`
+6. `[10 pts]` __Explain your reasoning for choosing your function’s name in the previous question.__ 
