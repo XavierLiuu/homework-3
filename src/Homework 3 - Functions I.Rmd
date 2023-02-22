@@ -1,0 +1,77 @@
+---
+title: "Homework 3 - Functions I"
+author: "Runxiang Liu"
+date: "21/2/2023"
+output:
+  md_document:
+    toc: yes
+    variant: markdown_github
+  html_document:
+    toc: yes
+  word_document:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+# Homework 3 - Functions I
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Write a function that takes a single numerical vector and returns three values, the minimum number, the median, and the maximum number of the vector. Test your function using the month column of the flights dataset.
+
+### loading dataset
+```{r}
+library(nycflights13)
+library(tidyverse)
+```
+
+### construct min_med_max function
+```{r}
+min_med_max <- function(x) {
+  c(min(x), median(x), max(x))
+}
+
+min_med_max(flights$month)
+```
+## Explain your reasoning for choosing your function’s name in the previous question.
+I chose the name min_med_max because it is descriptive of what the function does. It takes a vector and returns the minimum, median, and maximum values of the vector.
+
+## Write a function that categorizes a numerical variable in the flights data into four categories.
+```{r}
+categorize_time <- function(data, column) {
+  data %>% select(column) %>%
+    mutate(time = case_when(
+      column >= 500 & column <= 1159 ~ "Morning",
+      column >= 1200 & column <= 1659 ~ "Afternoon",
+      column >= 1700 & column <= 2059 ~ "Evening",
+      column >= 2100 | column <= 459 ~ "Night"
+    ))
+}
+
+result<-categorize_time(flights, 'dep_time')
+head(result,10)
+```
+## Explain your reasoning for choosing your function’s name in the previous question.
+I chose the name categorize_time because it is descriptive of what the function does. It takes a data object and a column name and returns a new column with the values categorized into four categories.
+
+## Write a function that calculates the median of all numeric variables in the flights dataset using a s`for` loop.
+```{r}
+flights_numeric_vars<-select_if(flights, is.numeric)
+result.median <- 0
+
+median_for <- function(data) {
+  for (i in names(data)) {
+    print(median(data[[i]], na.rm = TRUE))
+  } 
+}
+median_for.result <- median_for(flights_numeric_vars)
+```
+## Explain your reasoning for choosing your function’s name in the previous question.
+I chose the name median_for because it is descriptive of what the function does. It takes a data object and returns the median of all numeric variables in the data object by using a for loop.
+
+
+
+
